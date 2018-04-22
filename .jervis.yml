@@ -7,11 +7,7 @@
 language: java
 
 before_install:
-  - sudo apt update
-  - sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends vim
-  - echo test again
-  - mkdir -p build
-  - touch build/teste.log
+  - echo "In before install"
 
 install:
   - echo "Gradle is not seen on root user"
