@@ -1,0 +1,60 @@
+#######################
+# Aurea Central Jervis
+#######################
+# User guide and documentation can be found at: https://github.com/trilogy-group/central-jervis
+# This project is based on https://github.com/samrocketman/jervis
+
+language: java
+
+jdk:
+  - openjdk9
+
+before_install:
+  - sudo apt update
+  - sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends vim
+  - echo test again
+  - mkdir -p build
+  - touch build/teste.log
+
+install:
+  - echo "this is installation part"
+  - echo "this is another installation print"
+
+env:
+ - Test1="test"
+
+before_script:
+  - echo "this is before script section"
+  - echo "it will contain steps executed before the script section starts"
+
+script:
+  - echo "Hello World."
+  - echo "hello world again"
+
+after_success:
+  - echo "yaaaaaay succeeded .. everything is working fine now "
+  - echo "the job now is going to run the jenkins job pipeline "
+
+after_failure:
+  - echo "Sorry the job is failed .. please check the reason"
+  - echo "Jenkins pipeline will not be triggered"
+
+after_script:
+  - echo "after script section"
+  - echo "after script section again"
+
+branches:
+  only:
+    - develop
+    - master
+
+jenkins:
+  platform: docker
+#  # lifecycles_standard_stable.json
+#  os: standard
+#  stability: stable
+  sudo: sudo
+  pipeline_jenkinsfile: Jenkinsfile
+  collect:
+    collect:
+      artifacts: build/*.log
