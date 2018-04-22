@@ -14,8 +14,8 @@ before_install:
   - touch build/teste.log
 
 install:
-  - echo "this is installation part"
-  - echo "this is another installation print"
+  - echo "Gradle is not seen on root user"
+  - export PATH=$PATH:/home/jenkins/.sdkman/candidates/gradle/current/bin
 
 env:
  - Test1="test"
