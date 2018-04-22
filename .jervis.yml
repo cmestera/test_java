@@ -6,6 +6,12 @@
 
 language: java
 
+script: echo in my java build
+
+script: env
+
+script: echo in my java script
+
 stability: None
 
 branches:
