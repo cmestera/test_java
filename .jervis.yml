@@ -36,3 +36,8 @@ cache:
     - ${HOME}/.sdkman
 
 
+jenkins:
+  platform: docker
+  os: ubuntu1604
+
+
